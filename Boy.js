@@ -12,8 +12,9 @@ import {
     View
 } from 'react-native';
 
-import Girl from './Girl';
 import NavigationBar from './NavigationBar';
+import Girl from './Girl';
+import ListViewTest from './ListViewTest';
 
 export default class Boy extends Component {
     constructor(props) {
@@ -29,7 +30,7 @@ export default class Boy extends Component {
                 <NavigationBar
                     title={'Boy'}
                     statusBar={{
-                        backgroundColor:'red'
+                        backgroundColor: 'red'
                     }}
                 />
 
@@ -56,6 +57,13 @@ export default class Boy extends Component {
                 >送女孩一枝玫瑰</Text>
                 {/*用来展示 回调的word*/}
                 <Text style={styles.text}>{this.state.word}</Text>
+                <Text style={styles.text}
+                      onPress={() => {
+                          this.props.navigator.push({
+                              componet: ListViewTest
+                          });
+                      }}
+                >ListView的学习</Text>
             </View>
         );
     }
